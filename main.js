@@ -5,6 +5,16 @@ const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
+const score = document.querySelector('span.score')
+
+const circleMouse = document.createElement('div')
+circleMouse.className = 'cursor'
+document.body.appendChild(circleMouse)
+document.addEventListener('mousemove', e => {
+    circleMouse.style.top = e.pageY - 10 + 'px'
+    circleMouse.style.left = e.pageX - 10 + 'px'
+})
+
 function random(min, max) {
     const num = Math.floor(Math.random() * (max - min + 1)) + min;
     return num;
@@ -79,6 +89,7 @@ while (balls.length < 25) {
     balls.push(ball);
 }
 
+score.textContent = balls.length
 
 
 function loop() {
