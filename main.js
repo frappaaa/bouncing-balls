@@ -11,8 +11,8 @@ const circleMouse = document.createElement('div')
 circleMouse.className = 'cursor'
 document.body.appendChild(circleMouse)
 document.addEventListener('mousemove', e => {
-    circleMouse.style.top = e.pageY - 10 + 'px'
-    circleMouse.style.left = e.pageX - 10 + 'px'
+    circleMouse.style.top = e.pageY + 'px'
+    circleMouse.style.left = e.pageX + 'px'
 })
 
 function random(min, max) {
